@@ -6,7 +6,7 @@
   padding:0;
 
 }
-/* TODO:Lato ei toimi atm */
+/* TODO:Ei oo sama fontti atm */
 body{
   font-family: 'Lato', sans-serif;
   background:#fff;
@@ -14,13 +14,14 @@ body{
   font-size:1rem;
   line-height: 1.5;
 }
+/*Buttonit*/
 .main-btn{
   padding: 1rem 1.5rem;
   margin-right:15px;
   background:#fff;
   color:#d6003a;
   text-decoration: none;
-  font-size:16px;
+  font-size:17px;
   font-weight:bold;
 }
 
@@ -32,6 +33,46 @@ body{
   transform:translateX(50%);
   transition:all 0.3s;
 }
+.alt-btn{
+  padding: 1rem 1.5rem;
+  margin-right:15px;
+  background:#fff;
+  color:#d6003a;
+  text-decoration: none;
+  font-size:16px;
+  font-weight:bold;
+  border:2px #d6003a solid;
+}
+
+.alt-btn:hover{
+  background:#d6003a;
+  color:#fff;
+  transition:all 0.3s;
+}
+.alt-btn:hover i{
+  transform:translateX(50%);
+  transition:all 0.3s;
+}
+.footer-btn{
+  padding: 1rem 1.5rem;
+  margin-right:15px;
+  background:rgb(40, 40, 40);
+  color:#fff;
+  text-decoration: none;
+  font-size:16px;
+  font-weight:bold;
+  border:2px #fff solid;
+}
+
+.footer-btn:hover{
+  background:#fff;
+  color:rgb(40, 40, 40);
+  transition:all 0.3s;
+}
+.footer-btn:hover i{
+  transform:translateX(50%);
+  transition:all 0.3s;
+}
 .container{
   width:45%;
   margin:auto;
@@ -39,7 +80,7 @@ body{
 /*Header */
 /* TODO: box shadow alle, kun scrollattu alaspäin */
 header{
-  height:11.2vh;
+  height:160px;
   width:100%;
   margin:auto;
   position:fixed;
@@ -57,7 +98,7 @@ header{
 .background-top{
   background:#f8f8f8;
   width:100vw;
-  height:3.7vh;
+  height:55px;
   position:absolute;
   z-index:-1;
 }
@@ -87,7 +128,6 @@ header{
   height:80px;
   position:absolute;
   top:65px;
-  left:27vw;
 }
 
 #bottom ul{
@@ -121,7 +161,7 @@ header{
   transform:translateX(-100%);
 }
 
-/*hover effectit*/
+/*Navbar hover effectit*/
 #bottom a:hover{
   color:red;
 }
@@ -169,7 +209,7 @@ header{
   grid-template-columns: repeat(3, 1fr);
   border-bottom:3px red solid;
 }
-/*TODO: fixaa paremmaks jos kerkeet/jaksat*/
+/*TODO: fixaa paremmaks jos kerkeet/jaksat, paska tapa tehä tää*/
 #bottom .alavalikko1 li:nth-child(n+4){
   margin-top:-20%;
 }
@@ -206,7 +246,7 @@ header{
 
 /*Covid ilmotus*/
 .background-corona{
-  height:2.5vh;
+  height:40px;
   width:100%;
   background:#f8f8f8;
   position:absolute;
@@ -231,7 +271,7 @@ header{
 .showcase{
   padding-top:1vh;
   width:100%;
-  height:43.5vh;
+  height:620px;
   position:relative;
   background:url('img/showcase.png') no-repeat center center/cover;
 }
@@ -253,9 +293,9 @@ header{
 }
 
 .showcase-btn{
-  position:absolute;
-  left:760px;
-  padding-top:20px;
+  position:relative;
+  left:0;
+  padding-top:50px;
 }
 
 /* Main teksti*/
@@ -276,7 +316,7 @@ header{
 .cards-1{
   padding-top:40px;
   width:42%;
-  height:40vh;
+  height:530px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(2, 1fr);
@@ -285,7 +325,7 @@ header{
 }
 
 .cards-1-left{
-  background: url('/img/cards-1-left.png')no-repeat center center / cover; 
+  background: url('img/cards-1-left.png')no-repeat center center / cover; 
   color:#fff;
   text-align:center;
 }
@@ -302,7 +342,7 @@ header{
 }
 
 .cards-1-right{
-  background:url('/img/cards-1-right.png')no-repeat center center / cover;
+  background:url('img/cards-1-right.png')no-repeat center center / cover;
   color:#fff;
   text-align:center;
 }
@@ -317,8 +357,8 @@ header{
   padding-bottom:40px;
 }
 
-/* Koulutusohjelmat */
-
+/* Koulutusohjelmat */ 
+/*TODO: Koulutusohjelma alivalikot ym.*/
 .koulutusohjelmat h1{
   padding-top:100px;
 }
@@ -352,4 +392,160 @@ header{
   top:15px;
   right:25px;
   color:#d6003a
+}
+
+/* Koulutusohjelmat content */
+.koulutusohjelmat-content{
+  padding-top:40px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  grid-gap:30px;
+  justify-content:space-between;
+}
+
+.koulutusohjelmat-left{
+  margin-top:30px;
+  border:black 1px solid;
+}
+.koulutusohjelmat-right{
+  margin-top:0vh;
+  right:0;
+  background:#d6003a;
+  height:260px;
+  width:380px;
+  color:#fff;
+  padding:10px;
+}
+
+.koulutusohjelmat-right h2, p{
+  padding-top:25px;
+  padding-left:20px;
+}
+.koulutusohjelmat-right .btn{
+  position:relative;
+  padding-left:25px;
+  bottom:-30px;
+}
+.koulutusohjelmat .all-btn{
+  margin-top:50px;
+}
+
+/*Saranen luvut*/
+
+.saranen-numbers{
+  padding-top:8vh;
+}
+.saranen-numbers h2{
+  position:relative;
+  font-size:30px;
+  left:5%;
+  padding-bottom:2vh;
+}
+.numbers{
+  width:90%;
+  display:grid;
+  margin:auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.numbers h1{
+  font-size: 50px;
+}
+/*Uutiskirjeet*/
+.newsletter-cards{
+  padding-top:8vh;
+  width:90%;
+  display:grid;
+  margin:auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:30px;
+}
+
+.newsletter-card{
+  background:#f8f8f8;
+  padding:30px;
+}
+.newsletter-card .btn{
+  position:relative;
+  padding-top:50px;
+  padding-bottom:20px;
+}
+
+
+
+/*Ajankohtaista-alue*/
+
+.ajankohtaista{
+  padding-top:50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
+.main-footer{
+  right:0;
+  height:500px;
+  background-color:rgba(40, 40, 40, 1);
+  color:#fff;
+}
+
+.container-footer{
+  width:50%;
+  margin:auto;
+}
+.footergrid{
+  display:grid;
+  grid-template-columns:1fr 4fr;
+
+}
+.footer-links a{
+  color:#fff;
+  text-decoration: none;
+}
+
+.footer-links{
+  display:grid;
+  grid-template-rows: 1fr;
+  margin-top:50px;
+}
+.footer-links li{
+  list-style: none;
+  padding-top:40px;
+}
+.footer-links li ul{ /*fb,twitter,lin */
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  color:#fff;
+  width:80%;
+  margin:left;
+  
+}
+.footer-cities ul{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  margin-top:50px;
+}
+
+.footer-cities li{
+  list-style: none;
+  padding-top:50px;
+}
+
+.main-footer .tietosuojaseloste{
+  float:right;
+  font-size: 12px;
+  
+}
+
+.main-footer .tietosuojaseloste a{
+  color:#fff;
 }
