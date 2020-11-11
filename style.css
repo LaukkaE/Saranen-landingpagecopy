@@ -6,6 +6,7 @@
   padding:0;
 
 }
+/* TODO:Lato ei toimi atm */
 body{
   font-family: 'Lato', sans-serif;
   background:#fff;
@@ -36,6 +37,7 @@ body{
   margin:auto;
 }
 /*Header */
+/* TODO: box shadow alle, kun scrollattu alaspäin */
 header{
   height:11.2vh;
   width:100%;
@@ -106,6 +108,20 @@ header{
   transition: .3s ease-in-out;
   padding-bottom:5px;
 }
+#bottom #searchbox{
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  padding-bottom:5px; 
+}
+#bottom #searchbox:focus{
+  outline-width:0;
+}
+#bottom i{
+  transform:translateX(-100%);
+}
+
+/*hover effectit*/
 #bottom a:hover{
   color:red;
 }
@@ -124,21 +140,67 @@ header{
   width:100%;
 }
 
-#bottom #searchbox{
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  padding-bottom:5px; 
-}
-#bottom #searchbox:focus{
-  outline-width:0;
-}
-#bottom i{
-  transform:translateX(-100%);
-}
-/*alivalikkojen piilotus*/
-#bottom ul li ul li {
+
+/*Alavalikot*/
+#bottom .alavalikko{
   display:none;
+}
+#bottom .alavalikko li{
+  margin-top:10px;
+  padding-bottom:15px;
+  line-height:1.2;
+}
+#bottom .alavalikko a{
+  font-size:15px;
+  margin-right:5px;
+}
+#bottom .alavalikko li:hover{
+  font-weight:1000;
+  transition:0s;
+}
+
+/* Eka alavalikko erilailla järjestetty */
+#bottom li:hover .alavalikko1{
+  position:absolute;
+  width:21vw;
+  transform: translateX(-30%);
+  display:grid;
+  background:#fff;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom:3px red solid;
+}
+/*TODO: fixaa paremmaks jos kerkeet/jaksat*/
+#bottom .alavalikko1 li:nth-child(n+4){
+  margin-top:-20%;
+}
+#bottom .alavalikko1 hr{
+  position:absolute;
+  background-color:rgb(180, 180, 180);
+  border:none;
+  left:2.5%;
+  top:40%;
+  width:95%;
+  height:3px;
+}
+#bottom li:hover .alavalikko2{
+  position:absolute;
+  transform:translatex(-30%);
+  display:grid;
+  background:#fff;
+  grid-template-columns: repeat(1, 1fr);
+  border-bottom:3px red solid;
+}
+#bottom .alavalikko2 li{
+  margin-right:25px;
+}
+/*TODO: fixaa paremmaks jos kerkeet/jaksat*/
+#bottom .alavalikko2 li:nth-child(n+2){
+  margin-top:-20%;
+}
+
+#bottom .alavalikko a:after{
+  content:'';
+  border-bottom:none;
 }
 
 
