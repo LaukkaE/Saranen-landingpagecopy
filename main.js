@@ -1,4 +1,6 @@
+//
 //ajankohtaista alue
+//
 const btns = document.querySelectorAll('.selection-btn')
 const contents = document.querySelectorAll('.tab-content-item')
 
@@ -15,9 +17,6 @@ function selectItem(e){
   tabContent.classList.add('show')
 }
 
-
-
-
 //vanhojen classien poisto
 function removeActive(){
   btns.forEach(item => item.classList.remove('active'))
@@ -25,6 +24,29 @@ function removeActive(){
 function removeShow(){
   contents.forEach(item => item.classList.remove('show'))
 }
-
 //listener
 btns.forEach(item=>item.addEventListener('click', selectItem))
+//
+//Saranen lukuina alueen underline animaatiot
+//
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+  if ($('.viewport-underline').isInViewport()) {
+      $('.viewport-underline').addClass('viewport-underline-active')
+  } else {
+    $('.viewport-underline').removeClass('viewport-underline-active')
+  }
+});
+
+//
+//Quotes slider
+//

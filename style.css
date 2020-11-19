@@ -456,6 +456,33 @@ header{
 
 /*Saranen luvut*/
 
+/* Punaisen underlinen animointi */
+.viewport-underline{
+  position:relative;
+}
+.viewport-underline:before{
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 4px;
+  bottom:0;
+  left: inherit;
+  background:#d60034;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: 1s linear;
+  transform-origin: 0 0;
+}
+ .viewport-underline-active:before{
+  visibility: visible;
+  transform: scaleX(1);
+} 
+.saranen-numbers h1{
+  margin-bottom:50px;
+}
+.saranen-numbers p{
+  margin-top:50px;
+}
 .saranen-numbers{
   padding-top:8vh;
 }
@@ -470,6 +497,7 @@ header{
   display:grid;
   margin:auto;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap:10px;
 }
 
 .numbers h1{
@@ -574,7 +602,38 @@ header{
   transition:all 0.3s;
 }
 /* Quotes */
-
+  .quotes{
+    position:relative;
+    height:460px;
+  }
+   .quotes:before{
+    content:'';
+    display:inline-block;
+    background-color:#f8f8f8;
+    z-index:-1;
+    position:absolute;
+    /* luulis menevän aina riittävän pitkälle */
+    left:-1500px;
+    height:100%;
+    right:0;
+  } 
+  /* .quote-cards {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    overflow-x: auto;
+    flex-direction: column;
+  }
+  .quote-card {
+    width: 300px;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  .gallery-cell h3{
+    font-size:20px;
+    line-height:2;
+    color:black;
+  } */
 
 
 /* Partners */
@@ -719,6 +778,10 @@ header{
   background:none;
   border:none;
   font-size:24px;
+}
+.slick-prev:focus,
+.slick-next:focus{
+  outline:0;
 }
 
 
