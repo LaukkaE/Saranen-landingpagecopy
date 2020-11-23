@@ -924,7 +924,7 @@ header{
       transition:transform 0.2s ease-in-out;
 
     }
-    .show{
+    .container-header.show{
       transform:translateY(130px);
     }
     #top{
