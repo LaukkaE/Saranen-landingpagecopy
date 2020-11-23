@@ -15,6 +15,49 @@ body{
   line-height: 1.5;
 }
 /*Buttonit*/
+.mobile-btn{
+  width:80px;
+  height:80px;
+  cursor:pointer;
+  position:absolute;
+  right:5px;
+  top:30px;
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+.mobile-btn__line{
+  width:30px;
+  height:2px;
+  background:red;
+  border-radius:2px;
+  transition:all .2s ease-in-out;
+}
+.mobile-btn__line::before,
+.mobile-btn__line::after{
+  content:'';
+  position:absolute;
+  width:30px;
+  height:2px;
+  background:red;
+  border-radius:2px;
+  transition:all .2s ease-in-out;
+}
+.mobile-btn__line::before{
+  transform:translateY(-10px);
+}
+.mobile-btn__line::after{
+  transform:translateY(10px);
+}
+.active .mobile-btn__line{
+  background:transparent;
+}
+.active .mobile-btn__line::before{
+  transform:rotate(45deg);
+}
+.active .mobile-btn__line::after{
+  transform:rotate(-45deg);
+}
 .main-btn{
   padding: 1rem 1.5rem;
   margin-right:15px;
@@ -147,10 +190,20 @@ header{
   letter-spacing:0px;
 }
 /*Navbar*/
-#bottom img {
-  height:80px;
+.headerimg{
+  display:flex;
   position:absolute;
-  top:65px;
+  width:1200px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+.headerimg img {
+  height:80px;
+  margin-top:65px;
 }
 
 #bottom ul{
@@ -276,7 +329,7 @@ header{
   z-index:-1;
 }
 .corona{
-  padding-top:11.2vh;
+  padding-top:156px;
   padding-bottom:5px;
   text-align:center;
   text-transform:uppercase;
@@ -546,7 +599,6 @@ header{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   margin:auto;
-  grid-gap:10px;
 }
 /* piilottaa contentit jotka ei ole valittuna, class "show" näyttää */
 #tab-1-content,
@@ -560,7 +612,7 @@ header{
 }
 .tab-subcontent img{
   height:200px;
-  width:333px;
+  width:90%;
 
 }
 .tab-subcontent #tab-subcontent-pvm{
@@ -651,7 +703,7 @@ header{
 
 .slick-slide img {
   height:70px;
-  max-width:180px;
+  max-width:auto;
   vertical-align:middle;
 }
 
@@ -822,8 +874,7 @@ header{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   color:#fff;
-  width:80%;
-  margin:left;
+  width:200px;
   
 }
 .footer-cities ul{
@@ -847,3 +898,122 @@ header{
   color:#fff;
 }
 
+/* Media queryt */
+@media(max-width:1100px){
+    /* Header menu */
+    #searchbox{
+      display:none;
+    }
+    #bottom i{
+      display:none;
+    }
+    .headerimg img{
+      margin-top:30px;
+      margin-left:20px;
+    }
+    .mobile-btn{
+      display:flex;
+      Z-index:5;
+    }
+    .background-top{
+      display:none;
+    }
+    .container-header{
+      width:100%;
+      transform:translateY(-1500px);
+      transition:transform 0.2s ease-in-out;
+
+    }
+    .show{
+      transform:translateY(130px);
+    }
+    #top{
+      background:#d60034;
+    }
+    #top ul{
+      display:block;
+      float:left;
+      
+    }
+    #top ul li{
+      margin-top:3px;
+    }
+    #top ul li a{
+      color:#fff;
+    }
+    #bottom{
+      background:#fff;
+    }
+    #bottom ul{
+      display:block;
+      float:left;
+    }
+    #bottom ul li{
+      padding-top:10px;
+    }
+    #bottom .alavalikko li,
+    #bottom a:after,
+    #bottom li:hover .alavalikko1{
+      display:none;
+    }
+
+
+
+  .container{
+    width:97%;
+    margin:auto;
+  }
+
+  .main-footer{
+    height:700px;
+  }
+  .tab-subcontent img{
+    width:33vw;
+  }
+
+  .container-footer{
+    width:95%;
+  }
+  .footergrid{
+    grid-template-columns:1fr 2fr;
+  }
+  .footer-cities ul{
+    grid-template-columns:repeat(2, 1fr);
+
+  }
+  .tietosuojaseloste{
+    padding-top:40px;
+  } 
+}
+@media(max-width:768px){
+
+
+
+
+  .cards-1{
+    grid-template-columns: 1fr;
+    height:1400px;
+  }
+  .koulutusohjelmat-content{
+    grid-template-columns:1fr;
+  }
+  .koulutusohjelmat-right{
+    width:100%;
+  }
+  .numbers{
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .newsletter-cards{
+    grid-template-columns:1fr;
+  }
+  .tab-content-item{
+    grid-template-columns: 1fr;
+  }
+  .tab-subcontent img{
+    width:100%;
+    height:auto;
+  }
+  .ajankohtaista-btn{
+    margin-bottom:20px;
+  }
+}

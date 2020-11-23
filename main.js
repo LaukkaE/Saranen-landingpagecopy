@@ -1,4 +1,13 @@
 //
+//mobile menu
+//
+const mobileBtn = document.querySelector('.mobile-btn')
+mobileBtn.addEventListener('click', () =>{
+   mobileBtn.classList.toggle('active')
+   document.querySelector('.container-header').classList.toggle('show')
+})
+
+//
 //ajankohtaista alue
 //
 const btns = document.querySelectorAll('.selection-btn')
