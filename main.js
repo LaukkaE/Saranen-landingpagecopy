@@ -1,4 +1,16 @@
 //
+//Header box shadow
+//
+$(window).scroll(function() {     
+  var scroll = $(window).scrollTop();
+  if (scroll > 0) {
+      $("#header").addClass("active");
+  }
+  else {
+      $("#header").removeClass("active");
+  }
+});
+//
 //mobile menu
 //
 const mobileBtn = document.querySelector('.mobile-btn')
@@ -6,6 +18,7 @@ mobileBtn.addEventListener('click', () =>{
    mobileBtn.classList.toggle('active')
    document.querySelector('.container-header').classList.toggle('show')
 })
+
 
 //
 //ajankohtaista alue
@@ -26,14 +39,12 @@ function selectItem(e){
   tabContent.classList.add('show')
 }
 
-//vanhojen classien poisto
 function removeActive(){
   btns.forEach(item => item.classList.remove('active'))
 }
 function removeShow(){
   contents.forEach(item => item.classList.remove('show'))
 }
-//listener
 btns.forEach(item=>item.addEventListener('click', selectItem))
 //
 //Saranen lukuina alueen underline animaatiot
@@ -56,6 +67,3 @@ $(window).on('resize scroll', function() {
   }
 });
 
-//
-//Quotes slider
-//

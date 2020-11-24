@@ -144,8 +144,7 @@ body{
   margin:auto;
 }
 /*Header */
-/* TODO: box shadow alle, kun scrollattu alaspäin */
-header{
+#header{
   height:155px;
   width:100%;
   margin:auto;
@@ -153,7 +152,9 @@ header{
   z-index:1;
   background:#fff;
 }
-
+#header.active{  /*Box shadow*/
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);   
+}
 .container-header {
   display:flex;
   flex-direction: column;
@@ -199,6 +200,7 @@ header{
   right: 0;
   bottom: 0;
   margin: auto;
+  z-index:-1;
 
 }
 .headerimg img {
@@ -278,7 +280,7 @@ header{
 /* Eka alavalikko erilailla järjestetty */
 #bottom li:hover .alavalikko1{
   position:absolute;
-  width:21vw;
+  width:538px;
   transform: translateX(-30%);
   display:grid;
   background:#fff;
