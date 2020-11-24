@@ -4,10 +4,10 @@
 $(window).scroll(function() {     
   var scroll = $(window).scrollTop();
   if (scroll > 0) {
-      $("#header").addClass("active");
+      $("#header").addClass("scrolled");
   }
   else {
-      $("#header").removeClass("active");
+      $("#header").removeClass("scrolled");
   }
 });
 //

@@ -67,6 +67,7 @@ body{
   font-size:17px;
   font-weight:bold;
   display: inline-block;
+  border-radius:4px;
 }
 
 .main-btn:hover{
@@ -87,6 +88,7 @@ body{
   font-weight:bold;
   border:2px #d6003a solid;
   display: inline-block;
+  border-radius:4px;
 }
 
 .alt-btn:hover{
@@ -152,8 +154,8 @@ body{
   z-index:1;
   background:#fff;
 }
-#header.active{  /*Box shadow*/
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);   
+#header.scrolled{  /*Box shadow,kun scrollattu alaspäin*/
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);   
 }
 .container-header {
   display:flex;
@@ -657,10 +659,12 @@ body{
 }
 /* Quotes */
   .quotes{
+    display:grid;
     position:relative;
     height:460px;
+    grid-template-columns:1.5fr 1fr;
   }
-   .quotes:before{
+   .quotes::before{
     content:'';
     display:inline-block;
     background-color:#f8f8f8;
@@ -670,24 +674,85 @@ body{
     left:-1500px;
     height:100%;
     right:0;
+  }
+   .quotes::after{
+    content:'';
+    display:inline-block;
+    background:url('img/quotespeople.webp') no-repeat center center/cover;
+    z-index:2;
+    height:350px;
+    width:350px;
+    right:50px;
+    bottom:50px;
+    position:absolute;
+  }
+  .quotes-left{
+    height:460px;
+    width:700px;
+    position:absolute;
   } 
-  /* .quote-cards {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    overflow-x: auto;
-    flex-direction: column;
+  .quotes-left h3{
+    margin-top:100px;
+    z-index:1;
+    font-size:22px;
   }
-  .quote-card {
-    width: 300px;
-    flex-shrink: 0;
-    height: 100%;
+  .quotes-left p{
+    margin-top:30px;
+    font-weight:800;
+  } 
+  .quotes-right img{
+    display:inline-block;
+    z-index:1;
+    height:500px;
+    width:300px;
+    right:0;
+    bottom:0;
+    position:absolute;
+    transform:translateX(25%);
   }
-  .gallery-cell h3{
-    font-size:20px;
-    line-height:2;
+  .quotes-right::after{ /*Imagelle punertava filter*/
+    content:'';
+    height:500px;
+    width:300px;
+    background-color:rgba(210, 82, 127, 0.5);
+    z-index:1;
+    right:0;
+    bottom:0;
+    position:absolute;
+    transform:translateX(25%);
+  }
+  .slide-count{
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+    margin-right:45px;
+  }
+  .slide-count span{
+    font-size:24px;
+  }
+   .quotes-prev{
+
     color:black;
-  } */
+    background:none;
+    border:none;
+    font-size:24px;
+    padding-right:5px;
+  }
+  .quotes-prev:hover{
+    transform: translateX(-30%);
+    transition:all 0.2s;
+  }
+  .quotes-next{
+    color:black;
+    background:none;
+    border:none;
+    font-size:24px;
+    margin-left:5px;
+  } 
+  .quotes-next:hover{
+    transform: translateX(30%);
+    transition:all 0.2s;
+  }
 
 
 /* Partners */
@@ -701,12 +766,14 @@ body{
 .slick-slide {
   margin: 0px 20px;
   margin-bottom:100px;
+  outline: none;
 }
 
 .slick-slide img {
-  height:70px;
+  max-height:60px;
   max-width:auto;
   vertical-align:middle;
+  margin:auto;
 }
 
 .slick-slider
