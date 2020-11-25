@@ -446,33 +446,42 @@ body{
 .koulutusohjelmat .sub-nav{
   display:none;
 }
-
 #rajauspalkit{
   padding-top:30px;
-  width:30vw;
+  width:500px;
   list-style: none;
   display:grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
-}
-
-
-.koulutusohjelmat ul li{
-  width:15vw;
-  color:#000;
-  font-weight: bold;
-  background:#f8f8f8;
-  padding:10px;
   position:relative;
-  display:inline-block;
 }
-
-.koulutusohjelmat ul li i{
+#rajauspalkit .dropdown{
+  background:#f8f8f8;
+  border:none;
+  padding:10px 15px;
+  outline:none;
+  font-weight:bold;
+  width:100%;
+}
+.dropdown option{
+  font-size:16px;
+}
+/* Selectioanglen muutto fontawesomeikoniksi */
+ #rajauspalkit select{
+  appearance: none;
+}
+.selection-div{
+  position:relative;
+}
+.selection-div::after{
+  content:"\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   position:absolute;
-  top:15px;
-  right:25px;
-  color:#d6003a
-}
+  right:10px;
+  top:5px;
+  color:#d6003a;
+} 
 
 /* Koulutusohjelmat content */
 .koulutusohjelmat-content{
@@ -1025,9 +1034,17 @@ body{
     #bottom li:hover .alavalikko1{
       display:none;
     }
-
-
-
+    .quotes-left h3{
+      margin-top:50px;
+    }
+    .quotes::after{
+      height:200px;
+      width:200px;
+      top:100px;
+    }
+    .slide-count{
+      margin-right:200px;
+    }
   .container{
     width:97%;
     margin:auto;
@@ -1084,5 +1101,38 @@ body{
   }
   .ajankohtaista-btn{
     margin-bottom:20px;
+  }
+
+  /* Quotes */
+  .quotes{
+    grid-template-columns: 1fr;
+    width:100%;
+    height:800px;
+  }
+  .quotes-left{
+    width:100%;
+  }
+  .quotes::after{
+    height:auto;
+    width:100%;
+    top:30px;
+    margin:50px 50px 50px 50px;
+    position:relative;
+  }
+  .quotes-right img{
+    display:none;
+  }
+  .quotes-right::after{
+    transform: rotate(90deg);
+    background:#d6003a;
+    height:1500px;
+    top:5px;
+  }
+  .slide-count{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-top:-50px;
+    margin-right:45px;
   }
 }

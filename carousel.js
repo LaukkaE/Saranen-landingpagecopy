@@ -37,7 +37,7 @@ var totalCounter = 4; //hardcodettu slidejen määrä, koska kahden slickslideri
 $('.quote-slider').on('init reInit afterChange', function() {
   var currentCounter = $('.slick-current').attr("data-slick-index");
   currentCounter++ //nollaindeksin korjaus    
-  $status.html( '<span class="current_slide">' + currentCounter + '</span> / <span class="total_slides"> ' + totalCounter + '</span>');
+  $status.html( '<span class="current_slide">' + currentCounter + '</span> <span> / </span> <span class="total_slides"> ' + totalCounter + '</span>');
 });
 
 

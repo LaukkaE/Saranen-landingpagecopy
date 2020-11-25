@@ -115,28 +115,32 @@
 
       <div class="koulutusohjelmat">
         <h1>Avoimet koulutusohjelmat työnhakijoille</h1>
-          <ul id="rajauspalkit">
-            <li class="osaamisala">Kaikki <i class="fas fa-angle-down 2x"></i></i>
-              <ul class="sub-nav">
-                <li>IT</li>
-                <li>Myynti ja Markkinointi</li>
-                <li>Taloushallinto</li>
-              </ul>
-            </li>
-            <li class= "alue">Kaikki <i class="fas fa-angle-down"></i></i>
-              <ul class="sub-nav">
-                <li>Itä-Suomi</li>
-                <li>Kanta-Häme</li>
-                <li>Kaakkois-Suomi</li>
-              </ul>
-            </li>
-            <li class= "aika">Järjestä hakuajan mukaan <i class="fas fa-angle-down"></i></i>
-              <ul class="sub-nav">
-                <li>Uusimmat ensin</li>
-                <li>Päättyvät ensin</li>
-              </ul>
-            </li>
-          </ul>
+          <div id="rajauspalkit">
+            <div class="selection-div">
+              <select id="osaamisala"class="dropdown">
+                  <option value="Osaamisala"disabled>Osaamisala</option>
+                  <option value="All"selected>Kaikki</option>
+                  <option value="IT">IT</option>
+                  <option value="MnM">Myynti ja Markkinointi</option>
+                  <option value="TH">Taloushallinto</option>
+              </select> 
+            </div>
+            <div class="selection-div">
+              <select id="alue"class="dropdown">
+                  <option value="Alue"disabled selected>Alue</option>
+                  <option value="Kaikki">Kaikki</option>
+                  <option value="I-S">Itä-Suomi</option>
+                  <option value="K-H">Kanta-Häme</option>
+              </select> 
+            </div>
+            <div class="selection-div">
+              <select id="aika"class="dropdown">
+                  <option value="Järjestä hakuajan mukaan"disabled selected>Järjestä hakuajan mukaan</option>
+                  <option value="sortByNew">Uusimmat ensin</option>
+                  <option value="sortByEnding">Päättyvät ensin</option>
+              </select> 
+            </div>
+            </div>
           <div class="koulutusohjelmat-content">
             <div class="koulutusohjelmat-left">
               <p>Toteutus javascriptillä</p>
